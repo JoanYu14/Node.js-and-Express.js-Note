@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>模擬從資料庫取得資料並套用到模板中</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>程式語言</th>
+        <th>評價</th>
+        <th>熱門程度</th>
+        <th>流行程度</th>
+      </tr>
+
+      <!-- languages是一個陣列，陣列內有五個物件(五個程式語言)，所以用forEach取把物件一個一個拿出來 -->
+      <!-- 並且把每個物件的屬性作成表格內的一行row，做完後在繼續下一個物件 -->
+      <% languages.forEach(lang=>{ %>
+      <tr>
+        <td><%= lang.name %></td>
+        <td><%= lang.rating %></td>
+        <td><%= lang.popularity %></td>
+        <td><%= lang.trending %></td>
+      </tr>
+      <% }) %>
+    </table>
+  </body>
+</html>
